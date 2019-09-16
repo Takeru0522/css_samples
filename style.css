@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+* {
+    margin: 0;
+    font-weight: lighter;
+    font-family: 'Montserrat', sans-serif; 
+    /* font-family: 'Poppins', sans-serif; */
+    color: rgb(63, 63, 63);
+    text-align: center;
+    letter-spacing: 2px;
+}
+ul {
+    list-style: none;
+}
+li {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+p {
+    margin: 1rem;
+}
+
+body {
+    padding: 0 4rem;
+    margin: 0 auto;
+    
+}
+
+h1 {
+    margin: 3rem auto;
+    font-size: 40px;
+}
+h2 {
+    font-size: 32px;
+    margin: 2rem auto;
+}
+
+
+/* section-1 */
+.animation-wrap {
+    width: 100%;
+    height: auto;
+    border: 1px solid cornflowerblue;
+    margin: 2rem auto 5rem;
+}
+.anime-code {
+    border: 1px solid grey;
+    padding: 10px;
+}
+.square {
+    margin: 3rem auto;
+    width: 150px;
+    height: 150px;
+    
+}
+#square-1 {
+    background: rgb(7, 221, 150);
+    animation-name: expand;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+@keyframes expand {
+    from {
+        width: 150px;
+    }
+    to {
+        width: 300px;
+    }
+}
+
+#square-2 {
+    background: rgb(153, 240, 53);
+    /* animation-name: spin;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+     */
+    animation: spin 3s linear infinite;
+}
+   
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+#square-3 {
+    background: rgb(238, 255, 82);
+    animation: rotate-y 3s linear infinite;
+}
+@keyframes rotate-y {
+    from {
+        transform: rotateY(0deg)
+    }
+    to {
+        transform: rotateY(360deg)
+    }
+}
+
+
+.square-area {
+    height: 250px;
+    width: 300px;
+}
+#square-4 {
+    background: rgb(7, 221, 150);
+    border-radius: 100%;
+    position: absolute;
+    left: 42%;
+}
+#square-4:hover {
+    animation: zoom .1s linear;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+@keyframes zoom {
+    from {
+        
+    }
+    to {
+        width: 180px;
+        height: 180px;
+        box-shadow: 10px 0 20px rgba(0, 0, 0, 0.19), 6px 0 6px rgba(0, 0, 0, 0.23);
+    }
+}
+
+#square-5 {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 450px;
+    height: 200px;
+}
+.shining-text {
+    color: white;
+    margin: auto;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shining 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: rgb(255, 255, 255, .03);
+}
+@keyframes shining {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%
+    }
+}
+
+
+
+/* Icon Hover Effect */
+.icon-area {
+    height: 300px;
+    width: 100%;
+    background: rgb(250, 250, 250);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-area ul {
+    position: relative;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.icon-area ul li {
+    position: relative;
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    margin: 0 2rem;
+    transform: rotate(-30deg) skew(25deg);
+    /* background: #ccc;
+    text-align: left; */
+}
+.icon-area ul li span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 30px !important;
+}
+.icon-area li:hover span {
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, .1);
+}
+
+
+/*  */
+.icon-area ul li:hover span:nth-child(5) {
+    transform: translate(40px, -40px);
+    opacity: 1;
+}
+.icon-area ul li:hover span:nth-child(4) {
+    transform: translate(30px, -30px);
+    opacity: .8;
+}
+.icon-area ul li:hover span:nth-child(3) {
+    transform: translate(20px, -20px);
+    opacity: .6;
+}
+.icon-area ul li:hover span:nth-child(2) {
+    transform: translate(10px, -10px);
+    opacity: .4;
+}
+.icon-area ul li:hover span:nth-child(1) {
+    transform: translate(0, 0);
+    opacity: .2;
+}
+/*  */
+.icon-area li:nth-child(1) span {
+    background: #3b5999;
+}
+.icon-area li:nth-child(2) span {
+    background: #55acee;
+}
+.icon-area li:nth-child(3) span {
+    background: #dd4b39;
+}
+.icon-area li:nth-child(4) span {
+    background: #0077b5;
+}
+.icon-area li:nth-child(5) span {
+    background: radial-gradient(circle at 0% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+
+
+
+
+
+
+/* section-2 */
+.font-wrap {
+    width: auto;
+    display: inline-block;
+    margin: 1.5rem auto;
+}
+.text-title {
+    font-size: 24px;
+    width: 100%;
+    padding-bottom: 2px;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+.text-sample {
+    font-size: 22px;
+}
+.text-note {
+    font-size: 18px;
+}
+
+.courier-new p {
+    font-family: 'Courier New', Courier, monospace;
+}
+.times p {
+    font-family: 'Times New Roman', Times, serif;
+}
+.avant-garde p {
+    font-family: 'Avant Garde', serif;
+}
